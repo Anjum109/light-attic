@@ -1,0 +1,17 @@
+.background-image {
+    background-image: url('../../../assets/Background-image/hand-painted-watercolor-pastel-sky-cloud-background_41066-1948.jpg');
+    background-size: cover;
+}
+
+#main-slider-container {
+    width: 100%;
+}
+
+.slider-card-image {
+    height: 250px;
+}
+
+.slider-card-title {
+    text-align: center;
+    font-weight: 700;
+}
