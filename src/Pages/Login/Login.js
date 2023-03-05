@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
@@ -9,7 +9,7 @@ import './login.css'
 const Login = () => {
 
     const [error, setError] = useState('');
-    const { providerLogin, google, signIn, loading } = useContext(AuthContext);
+    const { google, signIn, loading } = useContext(AuthContext);
     const [loginUserEmail, setLoginUserEmail] = useState('');
 
     const navigate = useNavigate();
@@ -36,7 +36,7 @@ const Login = () => {
                 setLoginUserEmail(email)
                 form.reset();
                 setError('');
-                navigate(from, { replace: true })
+                navigate('/')
             })
             .catch(error => {
                 console.error(error)

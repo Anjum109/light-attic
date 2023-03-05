@@ -17,7 +17,7 @@ const SignUp = () => {
     const [token] = useToken(createUserEmail);
     useTitle('Sign Up');
     const navigate = useNavigate();
-
+    const [createdUserEmail, setCreatedUserEmail] = useState('');
 
 
     const handleSubmit = event => {
@@ -57,7 +57,7 @@ const SignUp = () => {
                     .then(() => {
 
                         saveUser(name, email, role)
-
+                        navigate('/')
                     })
 
             })
@@ -85,14 +85,31 @@ const SignUp = () => {
     const handleGoogle = () => {
         google()
             .then(result => {
-                const user = result.user
+                const user = result.user;
+                // saveGoogleUser(user.displayName, user.email, user.role)
                 if (user) {
                     navigate('/')
-
                 }
             })
             .catch(error => console.error(error))
     }
+    // const saveGoogleUser = (name, email, role = 'Buyer') => {
+    //     const user = { name, email, role };
+    //     fetch('http:/localhost:5000/users', {
+    //         method: "POST",
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(user)
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data)
+    //             setCreatedUserEmail(email);
+    //         })
+    // }
+
+
     return (
         <div>
 

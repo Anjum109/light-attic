@@ -41,13 +41,15 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 ">
                             {menuItems}
+                            <li className='navbar-text border border-1 border-blue-800 mr-1 font-bold bg-blue-900 text-white'><Link to="/connectus">Connect with us</Link></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case login-bg font-bold text-3xl  hover:bg-blue-900 hover:text-blue-100"><img src={img} className='w-12' alt="" /> Light Attic</a>
+                    <a className="btn btn-ghost normal-case font-bold text-3xl  hover:bg-blue-900 hover:text-blue-100 mx-3"><img src={img} className='w-12' alt="" /> <i>Light Attic</i></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal login-bg">
                         {menuItems}
+
                     </ul>
                 </div>
                 <div className="navbar-end">
