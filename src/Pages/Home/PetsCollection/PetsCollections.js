@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 import useTitle from '../../../hooks/useTitle/useTile';
 import Navbar from '../../../Shared/Navbar/Navbar';
+import BookNow from '../../MyPets/BookNow';
 import Pets from './Pets';
 
 const PetsCollections = () => {
     const categoriesAllData = useLoaderData([]);
+    const [data, setData] = useState([]);
+    const { user } = useContext(AuthContext);
     useTitle('Pets');
 
     console.log(categoriesAllData);
@@ -18,12 +22,19 @@ const PetsCollections = () => {
             <div>
 
                 {
-                    categoriesAllData?.map((data) => (
+                    categoriesAllData?.map((product) => (
                         <Pets
-                            key={data._id}
-                            data={data}
+                            key={product._id}
+                            product={product}
                         ></Pets>
                     ))
+                }
+                {
+                    data && <BookNow
+                        data={data}
+                        user={user}
+                        setData={setData}
+                    ></BookNow>
                 }
             </div>
         </div>

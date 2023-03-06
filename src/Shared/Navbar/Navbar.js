@@ -20,7 +20,7 @@ const Navbar = () => {
         {user?.uid ?
             <>
                 <li className='navbar-text border border-1 border-blue-800 mr-1 font-bold bg-blue-900 text-white'><Link to="/dashboard">Dashboard</Link></li>
-                <li className='navbar-text border border-1 border-blue-800 mr-1 font-bold bg-blue-900 text-white'><Link to="/categories">Categories</Link></li>
+                <li className='navbar-text border border-1 border-blue-800 mr-1 font-bold bg-blue-900 text-white'><Link to="/allpets">All Pets</Link></li>
 
                 <li className='navbar-text border border-1 border-blue-800 mr-1 font-bold bg-blue-900 text-white'><Link onClick={handleLogOut}>Sign Out</Link></li>
             </>

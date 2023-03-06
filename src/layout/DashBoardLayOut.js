@@ -1,8 +1,10 @@
+
 import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider/AuthProvider';
 import useAdmin from '../hooks/useAdmin/useAdmin';
 import useSeller from '../hooks/useSeller/useSeller';
+
 import Navbar from '../Shared/Navbar/Navbar';
 
 const DashBoardLayOut = () => {
@@ -35,8 +37,8 @@ const DashBoardLayOut = () => {
                         }
                         {
                             isSeller && <>
-                                <li className='mt-2 border border-blue-900 font-bold text-blue-900 hover:bg-blue-900 hover:text-white hover:p-1  rounded'><Link to='/dashboard/addproducts'>Add a Product</Link></li>
-                                <li className='mt-2 border border-blue-900 font-bold text-blue-900 hover:bg-blue-900 hover:text-white hover:p-1  rounded'><Link to='/dashboard/myproducts'>My Products</Link></li>
+                                <li className='mt-2 border border-blue-900 font-bold text-blue-900 hover:bg-blue-900 hover:text-white hover:p-1  rounded'><Link to='/dashboard/addproducts'>Add a Pet</Link></li>
+                                <li className='mt-2 border border-blue-900 font-bold text-blue-900 hover:bg-blue-900 hover:text-white hover:p-1  rounded'><Link to='/dashboard/myproducts'>My Pets</Link></li>
                             </>
                         }
                     </ul>

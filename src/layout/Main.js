@@ -6,7 +6,6 @@ import Footer from '../Shared/Footer/Footer';
 const Main = () => {
     return (
         <div>
-
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactCardSlider from 'react-card-slider-component';
 import '../Home/Home.css'
-
+import { motion } from "framer-motion";
 const PetPictures = () => {
 
     const sliderClick = (slider) => {
@@ -21,9 +21,33 @@ const PetPictures = () => {
     return (
         <div>
             <div className='text-center font-bold text-4xl text-blue-900 mb-12 navbar-text'>
-                <h2>Some of Our Cute Pet Pictures</h2>
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.8 }}
+                    variants={{
+                        hidden: { opacity: 0, x: 50 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                    className="flex justify-center w-full"
+                >
+                    <h2>Some of Our Cute Pet Pictures</h2></motion.div>
             </div>
-            <ReactCardSlider slides={slides} id='main-slider-container' className='slider-card-image slider-card-title' />
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.8 }}
+                transition={{ duration: 0.7 }}
+                variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 },
+                }}
+                className="basis-1/2 flex justify-center"
+            >
+                <ReactCardSlider slides={slides} id='main-slider-container' className='slider-card-image slider-card-title' />
+
+            </motion.div>
         </div>
     );
 };

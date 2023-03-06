@@ -4,7 +4,6 @@ import Banner from '../Banner/Banner';
 import Category from '../CategorySection/Category';
 import Contactus from '../Contact/Contactus';
 import PetPictures from '../PetPictures/PetPictures';
-import PetsCollections from '../PetsCollection/PetsCollections';
 import './Home.css'
 
 const Home = () => {
@@ -15,6 +14,7 @@ const Home = () => {
                 <Banner></Banner>
             </div>
             <div className='max-w-screen-xl mx-auto mb-12'>
+
                 <Category></Category>
                 <PetPictures></PetPictures>
 
